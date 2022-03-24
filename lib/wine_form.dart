@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:wines/wine.dart';
 
 class WineForm extends StatelessWidget {
@@ -13,17 +12,17 @@ class WineForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Adicionar Vinho'),
+        title: const Text('Adicionar Vinho'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(24),
         child: Column(
           children: [
-            Spacer(),
+            const Spacer(),
             Padding(
               padding: const EdgeInsets.only(bottom: 16),
               child: TextField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   hintText: 'rótulo do vinho',
                 ),
@@ -31,23 +30,21 @@ class WineForm extends StatelessWidget {
               ),
             ),
             TextField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: OutlineInputBorder(),
                 hintText: 'uva',
               ),
               controller: grapeEditController,
             ),
-            SizedBox(
-              height: 16,
-            ),
+            const SizedBox(height: 16),
             TextField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: OutlineInputBorder(),
                 hintText: 'ano',
               ),
               controller: yearEditController,
             ),
-            Spacer(),
+            const Spacer(),
             ElevatedButton(
               onPressed: () {
                 final newWine = Wine(
@@ -57,7 +54,7 @@ class WineForm extends StatelessWidget {
                 );
                 Navigator.of(context).pop(newWine);
               },
-              child: Text('Adicionar'),
+              child: const Text('Adicionar'),
             )
           ],
         ),
